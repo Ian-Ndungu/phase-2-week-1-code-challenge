@@ -1,38 +1,57 @@
+/* styles.css */
+/* General styles for the App component */
 .App {
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Styles for the TransactionList component */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #c83030;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+thead th {
+  background-color: #d41f1f;
+  font-weight: bold;
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
+tbody tr:hover {
+  background-color: #b30d0d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+/* TransactionList.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #1024b4;
+}
+
+thead th {
+  background-color: #20afc9;
+  font-weight: bold;
+  text-align: left;
+}
+
+tbody tr:hover {
+  background-color: #19c6cf;
+}
+
+div {
+  /* You can add any additional styles for the container div here */
 }
