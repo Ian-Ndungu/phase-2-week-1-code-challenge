@@ -1,43 +1,34 @@
-/* styles.css */
-/* General styles for the App component */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .App {
   font-family: Arial, sans-serif;
   text-align: center;
 }
 
-/* Styles for the TransactionList component */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-th, td {
-  padding: 10px;
-  border-bottom: 1px solid #c83030;
-}
-
-thead th {
-  background-color: #d41f1f;
-  font-weight: bold;
-  text-align: left;
-}
-
-tbody tr:hover {
-  background-color: #b30d0d;
-}
-
-
-
-
-/* TransactionList.css */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-th, td {
+th,
+td {
   padding: 10px;
   border-bottom: 1px solid #1024b4;
 }
@@ -52,6 +43,60 @@ tbody tr:hover {
   background-color: #19c6cf;
 }
 
-div {
-  /* You can add any additional styles for the container div here */
+div.App {
+  margin-bottom: 40px;
+}
+
+div > h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #45a049;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
 }
