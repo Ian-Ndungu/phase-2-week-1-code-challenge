@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const TransactionForm = () => {
   const [formData, setFormData] = useState({
@@ -9,45 +8,64 @@ const TransactionForm = () => {
     amount: '',
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  const [kujaribu, setKujaribu] = useState([]); 
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    axios
-      .post('/transactions', formData) // Assuming '/transactions' is the endpoint for the JSON data
-      .then((response) => {
-        console.log('Transaction added:', response.data);
-        // You can handle success cases here, or update the state to show the new data.
-      })
-      .catch((error) => {
-        console.error('Error adding transaction:', error);
-        // Handle error cases here.
-      });
-  };
+
+    
+    setKujaribu([...kujaribu, formData]);
+
+  
+    fetch(`http://localhost:8000/transactions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+   
+  
+
+  }
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label>Date:</label>
-        <input type="date" name="date" value={formData.date} onChange={handleChange} />
+        <input
+          type="date"
+          name="date"
+          value={formData.date}
+          onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+        />
       </div>
       <div>
         <label>Description:</label>
-        <input type="text" name="description" value={formData.description} onChange={handleChange} />
+        <input
+          type="text"
+          name="description"
+          value={formData.description}
+          onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+        />
       </div>
       <div>
         <label>Category:</label>
-        <input type="text" name="category" value={formData.category} onChange={handleChange} />
+        <input
+          type="text"
+          name="category"
+          value={formData.category}
+          onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+        />
       </div>
       <div>
         <label>Amount:</label>
-        <input type="number" name="amount" value={formData.amount} onChange={handleChange} />
+        <input
+          type="number"
+          name="amount"
+          value={formData.amount}
+          onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
+        />
       </div>
       <button type="submit">Add Transaction</button>
     </form>
