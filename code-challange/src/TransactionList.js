@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-
+import Delete from './delete';
 function TransactionList({ transaction }) {
   const [data, setData] = useState(transaction);
   console.log(data);
+
 
   return (
     <div>
@@ -22,6 +23,9 @@ function TransactionList({ transaction }) {
               <td>{element.category}</td>
               <td>{element.date}</td>
               <td>{element.amount}</td>
+                <td>
+                    <Delete data={data} setData={setData} dataId={element.id} />
+                </td>
             </tr>
           ))}
         </tbody>
@@ -31,3 +35,5 @@ function TransactionList({ transaction }) {
 }
 
 export default TransactionList;
+
+

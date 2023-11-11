@@ -104,6 +104,20 @@
       "category": "income",
       "amount": "5756757858585",
       "id": 15
+    },
+    {
+      "date": "2023-11-16",
+      "description": "dunhill",
+      "category": "pedi",
+      "amount": "500",
+      "id": 16
+    },
+    {
+      "date": "2023-11-07",
+      "description": "hospital bill",
+      "category": "bills",
+      "amount": "5000",
+      "id": 17
     }
   ]
 }
